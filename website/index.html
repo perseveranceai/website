@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perseverance AI - Artha: AI-Powered Immigration Assessment Tool</title>
+    <title>Perseverance AI - Lensy: AI Agent for Developer Documentation Quality</title>
     <style>
         :root {
             --primary-color: #4C956C; /* Green-ember primary */
@@ -96,7 +96,25 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             transform: translateY(-1px);
         }
-        
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .hero {
             padding: 160px 0 100px;
             text-align: center;
@@ -357,33 +375,40 @@
 
     <section class="hero" id="home">
         <div class="container">
-            <h1>Artha: AI-Powered Immigration Assessment Tool</h1>
-            <p>Perseverance AI's Artha analyzes resumes and documentation for EB1A, EB2-NIW, and O1A visa eligibility in seconds rather than hours, providing specific recommendations by comparing evidence to previously decided USCIS cases.</p>
-            <a href="#contact" class="btn">Schedule a Firm Demonstration</a>
+            <h1>Find What's Broken in Your Developer Docs</h1>
+            <p>Lensy analyzes your documentation and finds deprecated code examples, outdated API references, and content gaps — with specific, actionable recommendations to fix them.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">See It In Action</a>
+                <a href="https://calendly.com/getperseverance" class="btn btn-secondary" target="_blank">Schedule a Demo</a>
+            </div>
         </div>
     </section>
 
     <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Key Features</h2>
-                <p>Our specialized AI tool is designed specifically for immigration law firms seeking to evaluate client visa eligibility with greater accuracy, efficiency, and consistency across your practice.</p>
+                <h2>What Lensy Detects</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚖️</div>
-                    <h3>Legal-Focused Intelligence</h3>
-                    <p>Unlike generic AI tools, Artha contains a specialized knowledge base of actual USCIS cases including rejected petitions, providing your firm with insights based on real decisions and precedents.</p>
+                    <div class="feature-icon">🔍</div>
+                    <h3>Deprecated Code Examples</h3>
+                    <p>Identifies code snippets using outdated methods, removed APIs, or syntax that no longer works — with line-specific recommendations.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>Criteria-Specific Analysis</h3>
-                    <p>Evaluates client documentation against each EB1A, EB2-NIW, and O1A criterion with specific, actionable feedback your attorneys can use to strengthen applications before submission.</p>
+                    <div class="feature-icon">📊</div>
+                    <h3>Documentation Quality Scores</h3>
+                    <p>Evaluates your docs across 5 dimensions: Relevance, Freshness, Clarity, Accuracy, and Completeness. See exactly where you're strong and where you're not.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Firm Knowledge Integration</h3>
-                    <p>Optionally integrate your firm's anonymized case history to improve prediction accuracy while maintaining separate, secure knowledge bases that protect client confidentiality.</p>
+                    <div class="feature-icon">⚠️</div>
+                    <h3>Outdated API References</h3>
+                    <p>Flags references to deprecated endpoints, removed parameters, and version mismatches between your docs and your actual API.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Content Gaps & Redundancy</h3>
+                    <p>Finds missing documentation, duplicate content, and consolidation opportunities across your doc set.</p>
                 </div>
             </div>
         </div>
@@ -393,16 +418,13 @@
         <div class="container">
             <div class="benefits">
                 <div class="benefits-content" style="max-width: 800px; margin: 0 auto;">
-                    <h2>Why Law Firms Choose Artha</h2>
+                    <h2>Why Documentation Teams Use Lensy</h2>
                     <ul class="benefits-list">
-                        <li><strong>Enhance Attorney Productivity</strong> - Reduce assessment time from hours to seconds (94% efficiency improvement)</li>
-                        <li><strong>Improve Client Outcomes</strong> - Identify stronger cases for prioritization and increase approval rates</li>
-                        <li><strong>Strengthen Case Strategy</strong> - Pinpoint specific vulnerabilities with actionable recommendations before submission</li>
-                        <li><strong>Enhance Client Consultations</strong> - Provide evidence-based evaluation results during initial client meetings</li>
-                        <li><strong>Grow Your Practice</strong> - Enable attorneys to handle more cases while maintaining quality</li>
-                        <li><strong>Maintain Attorney-Client Privilege</strong> - Each firm's data is maintained in separate, secure knowledge bases</li>
+                        <li><strong>Specific Fixes, Not Generic Reports</strong> — Get "replace auth.login() with auth.authenticate() on line 45" instead of "update your documentation"</li>
+                        <li><strong>Audit in Minutes, Not Weeks</strong> — Point Lensy at a URL and get a quality report immediately, no setup required</li>
+                        <li><strong>Prioritized Recommendations</strong> — Know which issues to fix first based on impact and effort</li>
+                        <li><strong>Works With Any Dev Docs</strong> — API references, SDK guides, tutorials — if it's developer documentation, Lensy can analyze it</li>
                     </ul>
-                    <p style="margin-top: 20px;">Artha supports immigration law firms specializing in EB1A, EB2-NIW, and O1A visa categories, with plans to expand to other immigration categories in the future.</p>
                 </div>
 
             </div>
@@ -412,10 +434,14 @@
     <section id="contact" style="background-color: var(--light-bg);">
         <div class="container">
             <div class="section-title">
-                <h2>Request Information for Your Firm</h2>
-                <p>Interested in learning how Artha can enhance your immigration practice? Contact us to schedule a demonstration customized for your firm's specific practice areas and receive information about our onboarding process.</p>
+                <h2>Get a Free Documentation Audit</h2>
+                <p>We're working with a small group of design partners to refine Lensy. Submit your documentation URL and we'll run a complimentary quality analysis — no commitment required.</p>
             </div>
             <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="doc_url">Your Documentation URL</label>
+                    <input type="url" id="doc_url" name="doc_url" placeholder="e.g., docs.yourcompany.com" required>
+                </div>
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -425,16 +451,15 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="organization">Organization / Company</label>
+                    <input type="text" id="organization" name="organization">
                 </div>
                 <div id="form-status" style="margin-bottom: 20px; display: none;"></div>
-                <button type="submit" class="btn" style="border: none; cursor: pointer;">Request Information</button>
+                <button type="submit" class="btn" style="border: none; cursor: pointer;">Run My Audit</button>
             </form>
+            <p style="text-align: center; margin-top: 30px; color: var(--light-text);">
+                Or schedule a live demo: <a href="https://calendly.com/getperseverance" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Pick a time</a>
+            </p>
         </div>
         <script src="/assets/js/contact-form.js"></script>
     </section>
@@ -445,6 +470,8 @@
                 <a href="#" class="logo" style="color: white; margin-bottom: 20px;">Perseverance AI</a>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/pasupdr/" class="social-link">LinkedIn</a>
+                    <a href="https://calendly.com/getperseverance" class="social-link" target="_blank">Schedule a conversation</a>
+                    <a href="https://x.com/getperseverance" class="social-link" target="_blank">X</a>
                 </div>
                 <div class="footer-bottom">
                     <p>&copy; 2025 Perseverance AI. All rights reserved.</p>
