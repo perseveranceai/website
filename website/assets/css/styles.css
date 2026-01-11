@@ -458,6 +458,7 @@ nav {
 
 .form-group {
   margin-bottom: var(--space-lg);
+  position: relative;
 }
 
 .form-group label {
@@ -486,7 +487,33 @@ nav {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: rgba(23, 23, 23, 0.8);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* User-invalid state for modern browsers */
+.form-group input:user-invalid,
+.form-group textarea:user-invalid {
+  border-color: var(--accent-error);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+  color: var(--accent-error);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.form-group.has-error .error-message {
+  display: block;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: var(--accent-error);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
 }
 
 .form-group input::placeholder,
@@ -525,6 +552,26 @@ nav {
   border-radius: 6px;
   margin-bottom: var(--space-md);
   border: 1px solid rgba(59, 130, 246, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+#form-status .loading::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--accent-primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ============================================

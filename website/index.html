@@ -176,18 +176,21 @@
                 <p>We're looking for a small group of design partners to help refine Lensy. Submit your documentation
                     URL and we'll run a complimentary quality analysis — no commitment required.</p>
             </div>
-            <form id="contact-form" class="contact-form">
+            <form id="contact-form" class="contact-form" novalidate>
                 <div class="form-group">
                     <label for="doc_url">Your Documentation URL</label>
                     <input type="url" id="doc_url" name="doc_url" placeholder="e.g., docs.yourcompany.com" required>
+                    <span class="error-message">Please enter a valid documentation URL.</span>
                 </div>
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
+                    <span class="error-message">Please enter your name.</span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
+                    <span class="error-message">Please enter a valid email address.</span>
                 </div>
                 <div class="form-group">
                     <label for="organization">Organization / Company</label>
