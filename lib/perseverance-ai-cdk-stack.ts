@@ -80,6 +80,12 @@ export class PerseveranceAiCdkStack extends cdk.Stack {
     });
 
     // Create SES verification for admin email if provided
+    if (hostedZone) {
+      new ses.EmailIdentity(this, "DomainIdentity", {
+        identity: ses.Identity.domain(domainName),
+      });
+    }
+
     if (adminEmail) {
       new ses.EmailIdentity(this, 'AdminEmailIdentity', {
         identity: ses.Identity.email(adminEmail),

@@ -24,6 +24,7 @@ export async function handler(event: APIGatewayProxyEvent): Promise<APIGatewayPr
   };
 
   try {
+    console.log("Received event:", JSON.stringify(event));
     // Handle preflight requests
     if (event.httpMethod === 'OPTIONS') {
       return {
@@ -47,14 +48,15 @@ export async function handler(event: APIGatewayProxyEvent): Promise<APIGatewayPr
 
     // Parse the request body
     const requestBody = JSON.parse(event.body || '{}');
-    const { name, email, subject, message } = requestBody;
+    const { doc_url, name, email, organization } = requestBody;
+    console.log("Parsed body:", { doc_url, name, email, organization });
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email || !doc_url) {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({ message: 'Name, email, and message are required' })
+        body: JSON.stringify({ message: 'Name, email, and documentation URL are required' })
       };
     }
 
@@ -67,11 +69,12 @@ export async function handler(event: APIGatewayProxyEvent): Promise<APIGatewayPr
       id: leadId,
       name,
       email,
-      subject: subject || 'Contact Form Submission',
-      message,
+      doc_url,
+      organization: organization || 'Not provided',
       createdAt: timestamp
     };
 
+    console.log("Saving to DynamoDB...");
     await dynamoDb.send(new PutCommand({
       TableName: tableName,
       Item: leadItem
@@ -79,20 +82,22 @@ export async function handler(event: APIGatewayProxyEvent): Promise<APIGatewayPr
 
     // Send email notification
     if (adminEmail) {
-      await ses.send(new SendEmailCommand({
-        Source: adminEmail,
+      console.log("Sending email to:", adminEmail);
+      const sesResponse = await ses.send(new SendEmailCommand({
+        Source: 'notifications@perseveranceai.com',
+        ReplyToAddresses: [email],
         Destination: { ToAddresses: [adminEmail] },
         Message: {
-          Subject: { Data: `New Lead: ${subject || 'Contact Form Submission'}` },
+          Subject: { Data: `New Documentation Audit Request` },
           Body: {
             Text: {
               Data: `
-                New lead received from your website contact form:
+                New documentation audit request:
                 
                 Name: ${name}
                 Email: ${email}
-                Subject: ${subject || 'N/A'}
-                Message: ${message}
+                Documentation URL: ${doc_url}
+                Organization: ${organization || 'Not provided'}
                 
                 This lead has been saved to your database with ID: ${leadId}
               `
@@ -100,6 +105,7 @@ export async function handler(event: APIGatewayProxyEvent): Promise<APIGatewayPr
           }
         }
       }));
+      console.log("SES Response:", JSON.stringify(sesResponse));
     }
 
     // Return success response
