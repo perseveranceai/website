@@ -1,0 +1,29 @@
+PLACEHOLDER ASSETS NEEDED
+=========================
+
+Please replace these placeholder paths with your actual assets:
+
+1. assets/video/lensy-demo.mp4
+   - 60-90 second demo video
+   - OR use YouTube embed (see HTML comments)
+
+2. assets/images/video-fallback.jpg (optional)
+   - Thumbnail for video loading state
+
+3. assets/images/screenshots/lensy-url-input.png
+   - Screenshot of URL input interface
+
+4. assets/images/screenshots/lensy-analysis-progress.png
+   - Screenshot of streaming analysis
+
+5. assets/images/screenshots/lensy-quality-scores.png
+   - Screenshot of quality scores dashboard
+
+6. assets/images/screenshots/lensy-recommendations.png
+   - Screenshot of fix recommendations
+
+7. assets/images/founder-photo.jpg
+   - Professional headshot of Rakesh Pasupuleti
+   - Square format preferred (400x400px or similar)
+
+All paths are already configured in index.html - just drop your files in!

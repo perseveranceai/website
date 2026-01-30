@@ -1,0 +1,60 @@
+<svg width="320" height="420" viewBox="0 0 320 420" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define styles -->
+  <defs>
+    <style>
+      .box { fill: #1a1a1a; stroke: #3a3a3a; stroke-width: 1.5; }
+      .text { fill: #fafafa; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; }
+      .label { fill: #737373; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 10px; }
+      .arrow { stroke: #3a3a3a; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 8 2.5, 0 5" fill="#3a3a3a" />
+    </marker>
+  </defs>
+  
+  <!-- Step 1: Input -->
+  <rect x="60" y="15" width="200" height="50" rx="6" class="box"/>
+  <text x="160" y="35" text-anchor="middle" class="label">STEP 1</text>
+  <text x="160" y="52" text-anchor="middle" class="text">📎 Paste URL</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="160" y1="65" x2="160" y2="85" class="arrow"/>
+  
+  <!-- Step 2: Analyze -->
+  <rect x="60" y="85" width="200" height="50" rx="6" class="box"/>
+  <text x="160" y="105" text-anchor="middle" class="label">STEP 2</text>
+  <text x="160" y="122" text-anchor="middle" class="text">🔍 Analyze 5 Dimensions</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="160" y1="135" x2="160" y2="155" class="arrow"/>
+  
+  <!-- Step 3: Discover -->
+  <rect x="60" y="155" width="200" height="50" rx="6" class="box"/>
+  <text x="160" y="175" text-anchor="middle" class="label">STEP 3</text>
+  <text x="160" y="192" text-anchor="middle" class="text">📋 View Issues</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="160" y1="205" x2="160" y2="225" class="arrow"/>
+  
+  <!-- Step 4: Select -->
+  <rect x="60" y="225" width="200" height="50" rx="6" class="box"/>
+  <text x="160" y="245" text-anchor="middle" class="label">STEP 4</text>
+  <text x="160" y="262" text-anchor="middle" class="text">✓ Select Issues</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="160" y1="275" x2="160" y2="295" class="arrow"/>
+  
+  <!-- Step 5: Generate -->
+  <rect x="60" y="295" width="200" height="50" rx="6" class="box"/>
+  <text x="160" y="315" text-anchor="middle" class="label">STEP 5</text>
+  <text x="160" y="332" text-anchor="middle" class="text">🔧 Generate Fixes</text>
+  
+  <!-- Arrow 5 -->
+  <line x1="160" y1="345" x2="160" y2="365" class="arrow"/>
+  
+  <!-- Step 6: Apply -->
+  <rect x="60" y="365" width="200" height="50" rx="6" class="box"/>
+  <text x="160" y="382" text-anchor="middle" class="label">STEP 6</text>
+  <text x="160" y="397" text-anchor="middle" class="text">📄 Export or Apply</text>
+  <text x="160" y="410" text-anchor="middle" class="label" style="font-size: 9px;">(Report or Direct)</text>
+</svg>

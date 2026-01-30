@@ -95,6 +95,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -104,8 +105,14 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Find What's Broken in Your Developer Docs</h1>
-            <p>Lensy analyzes your documentation and finds deprecated code examples, outdated API references, and
-                content gaps — with specific, actionable recommendations to fix them.</p>
+            <p>Lensy finds deprecated code examples, outdated API references, and content gaps — with specific fixes you
+                can apply immediately.</p>
+            <p style="font-size: 0.9375rem; color: var(--text-primary); margin-top: var(--space-lg); font-weight: 500;">
+                <span
+                    style="display: inline-block; background: var(--bg-tertiary); border: 1px solid var(--border-default); border-radius: 6px; padding: 0.5rem 1rem;">
+                    Currently in prototype ⭐ Seeking design partners
+                </span>
+            </p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn">See It In Action</a>
                 <a href="https://calendly.com/getperseverance" class="btn btn-secondary" target="_blank">Schedule a
@@ -114,35 +121,79 @@
         </div>
     </section>
 
-    <section class="features" id="features">
+    <section class="product-demo" id="demo">
         <div class="container">
             <div class="section-title">
-                <h2>What Lensy Detects</h2>
+                <h2>See Lensy In Action</h2>
+                <p>Watch how Lensy analyzes documentation and delivers actionable recommendations in real-time.</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">🔍</div>
-                    <h3>Deprecated Code Examples</h3>
-                    <p>Identifies code snippets using outdated methods, removed APIs, or syntax that no longer works —
-                        with line-specific recommendations.</p>
+            <div class="video-container">
+                <!-- USER PROVIDED: Demo video (60-90s) -->
+                <video controls poster="assets/images/video-poster.jpg">
+                    <source src="assets/video/Lensy-HD.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+            </div>
+            <div class="how-it-works-grid">
+                <div class="steps-column">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div>
+                            <h3>Input</h3>
+                            <p>Paste any documentation URL — API references, SDK guides, tutorials. No setup required.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div>
+                            <h3>Analyze</h3>
+                            <p>AI evaluates content against 5 quality dimensions: Relevance, Freshness, Clarity,
+                                Accuracy, and Completeness.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div>
+                            <h3>Discover</h3>
+                            <p>See a prioritized list of issues with specific line numbers — deprecated code, outdated
+                                APIs, content gaps.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div>
+                            <h3>Select</h3>
+                            <p>Choose which issues to fix. Focus on high-impact problems first.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div>
+                            <h3>Generate</h3>
+                            <p>AI creates before/after code fixes with clear explanations. No guesswork.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div>
+                            <h3>Apply</h3>
+                            <p>Export fixes as a report or apply directly. Share with your team and track improvements.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">📊</div>
-                    <h3>Documentation Quality Scores</h3>
-                    <p>Evaluates your docs across 5 dimensions: Relevance, Freshness, Clarity, Accuracy, and
-                        Completeness. See exactly where you're strong and where you're not.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">⚠️</div>
-                    <h3>Outdated API References</h3>
-                    <p>Flags references to deprecated endpoints, removed parameters, and version mismatches between your
-                        docs and your actual API.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" aria-hidden="true">🔗</div>
-                    <h3>Content Gaps & Redundancy</h3>
-                    <p>Finds missing documentation, duplicate content, and consolidation opportunities across your doc
-                        set.</p>
+                <div class="diagram-column">
+                    <img src="assets/images/how-it-works-diagram.svg"
+                        alt="How Lensy Works - 6 step process from URL input to export">
                 </div>
             </div>
         </div>
@@ -152,19 +203,16 @@
         <div class="container">
             <div class="benefits">
                 <div class="benefits-content" style="max-width: 800px; margin: 0 auto;">
-                    <h2>Why Documentation Teams Use Lensy</h2>
+                    <h2>Why Lensy</h2>
                     <ul class="benefits-list">
-                        <li><strong>Specific Fixes, Not Generic Reports</strong> — Get "replace auth.login() with
-                            auth.authenticate() on line 45" instead of "update your documentation"</li>
-                        <li><strong>Audit in Minutes, Not Weeks</strong> — Point Lensy at a URL and get a quality report
-                            immediately, no setup required</li>
-                        <li><strong>Prioritized Recommendations</strong> — Know which issues to fix first based on
-                            impact and effort</li>
-                        <li><strong>Works With Any Dev Docs</strong> — API references, SDK guides, tutorials — if it's
-                            developer documentation, Lensy can analyze it</li>
+                        <li><strong>Specific fixes</strong> — Get "replace auth.login() with auth.authenticate() on line
+                            45" instead of vague advice</li>
+                        <li><strong>Fast audits</strong> — Point Lensy at a URL, get results in minutes</li>
+                        <li><strong>Prioritized recommendations</strong> — Know what to fix first</li>
+                        <li><strong>Built for scale</strong> — Cloud-native infrastructure with real-time streaming and
+                            multi-model AI analysis</li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
@@ -172,9 +220,8 @@
     <section id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Get a Free Documentation Audit</h2>
-                <p>We're looking for a small group of design partners to help refine Lensy. Submit your documentation
-                    URL and we'll run a complimentary quality analysis — no commitment required.</p>
+                <h2>Become a Design Partner</h2>
+                <p>Submit your documentation URL for a complimentary quality analysis.</p>
             </div>
             <form id="contact-form" class="contact-form" novalidate>
                 <div class="form-group">
@@ -197,7 +244,7 @@
                     <input type="text" id="organization" name="organization">
                 </div>
                 <div id="form-status"></div>
-                <button type="submit" class="btn">Run My Audit</button>
+                <button type="submit" class="btn">Become a Design Partner</button>
             </form>
             <p class="text-center mt-xl" style="color: var(--text-muted);">
                 Or schedule a live demo: <a href="https://calendly.com/getperseverance" target="_blank"
@@ -222,7 +269,7 @@
                     <a href="https://x.com/getperseverance" class="social-link" target="_blank">X</a>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2025 Perseverance AI. All rights reserved.</p>
+                    <p>&copy; 2026 Perseverance AI. All rights reserved.</p>
                 </div>
             </div>
         </div>
