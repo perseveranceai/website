@@ -980,3 +980,72 @@ footer {
     order: -1;
   }
 }
+
+/* ============================================
+   PUBLIC NOTICES PAGE
+   ============================================ */
+
+.notices-section {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.notice-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  padding: var(--space-xl);
+}
+
+.notice-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.notice-description {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 700px;
+  margin-bottom: var(--space-lg);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.pdf-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.notice-download {
+  text-align: center;
+}
+
+.notice-meta {
+  max-width: 900px;
+  margin: var(--space-xl) auto 0;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .notice-card {
+    padding: var(--space-lg);
+  }
+
+  .pdf-viewer {
+    height: 400px;
+  }
+}
