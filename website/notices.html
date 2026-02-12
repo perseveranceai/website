@@ -35,7 +35,13 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="notices.html" class="active">Notices</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="https://console.perseveranceai.com/" target="_blank">Console ↗</a></li>
                 </ul>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
     </header>
@@ -43,7 +49,8 @@
     <section class="hero" id="home" style="padding-bottom: var(--space-2xl);">
         <div class="container">
             <h1>Public Notices</h1>
-            <p style="max-width: 600px; margin: 0 auto;">Official notices and filings available for public inspection.</p>
+            <p style="max-width: 600px; margin: 0 auto;">Official notices and filings available for public inspection.
+            </p>
         </div>
     </section>
 
@@ -55,7 +62,8 @@
                     regulations for public access file requirements.</p>
 
                 <div class="pdf-viewer">
-                    <iframe src="/assets/docs/notice-of-filing-lca.pdf#toolbar=0&navpanes=0" title="Notice of Filing of Labor Condition Application"></iframe>
+                    <iframe src="/assets/docs/notice-of-filing-lca.pdf#toolbar=0&navpanes=0"
+                        title="Notice of Filing of Labor Condition Application"></iframe>
                 </div>
 
                 <div class="notice-download">
@@ -87,7 +95,21 @@
             </div>
         </div>
     </footer>
-  <script src="assets/js/cookie-consent.js"></script>
+    <script src="assets/js/cookie-consent.js"></script>
+    <script>
+    document.querySelector('.hamburger').addEventListener('click', function () {
+        this.classList.toggle('active');
+        this.setAttribute('aria-expanded', this.classList.contains('active'));
+        document.querySelector('.nav-links').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            document.querySelector('.hamburger').classList.remove('active');
+            document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+            document.querySelector('.nav-links').classList.remove('open');
+        });
+    });
+    </script>
 </body>
 
 </html>
