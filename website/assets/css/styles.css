@@ -1020,11 +1020,13 @@ footer {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
+  position: relative;
 }
 
 .pdf-viewer iframe {
   width: 100%;
-  height: 100%;
+  height: calc(100% + 40px);
+  margin-top: -40px;
   border: none;
 }
 
