@@ -794,10 +794,135 @@ footer {
   flex: 1;
 }
 
-.founder-info h3 {
-  font-size: 1.75rem;
-  margin-bottom: var(--space-xs);
+
+/* ============================================
+   COOKIE CONSENT BANNER
+   ============================================ */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: rgba(17, 17, 17, 0.95);
+  /* var(--bg-secondary) with capacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  animation: slideUp 0.5s ease-out forwards;
 }
+
+.cookie-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.cookie-content p {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cookie-link {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.cookie-link:hover {
+  color: var(--accent-primary);
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+/* Button overrides for smaller banner size */
+.cookie-buttons .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.cookie-buttons .btn-primary {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: none;
+}
+
+.cookie-buttons .btn-primary:hover {
+  background: var(--text-secondary);
+}
+
+/* Mobile Responsiveness for Banner */
+@media (max-width: 768px) {
+  .cookie-banner {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: none;
+    border-radius: 12px 12px 0 0;
+    border-bottom: none;
+    padding: var(--space-lg);
+  }
+
+  .cookie-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .cookie-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Slide Up override */
+@media (max-width: 768px) {
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
 
 .founder-title {
   font-size: 1rem;
