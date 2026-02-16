@@ -7,4 +7,20 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.perseveranceai.com/sitemap.xml
+
+# LLM-readable company information
+# See https://llmstxt.org for specification
+LLMs-Txt: https://www.perseveranceai.com/llms.txt
