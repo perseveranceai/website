@@ -464,6 +464,28 @@ nav {
   font-size: 0.9375rem;
   color: var(--text-muted);
   line-height: 1.5;
+  margin-bottom: var(--space-lg);
+}
+
+.feature-card .btn {
+  width: 100%;
+  text-align: center;
+}
+
+.feature-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-lg);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.feature-card li {
+  margin-bottom: var(--space-sm);
+}
+
+.feature-card li strong {
+  color: var(--text-primary);
 }
 
 /* Benefits Section */
@@ -643,6 +665,104 @@ nav {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+.contact-page {
+  padding-top: 120px;
+  padding-bottom: var(--space-3xl);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-container .section-title {
+  margin-bottom: var(--space-xl);
+}
+
+/* ============================================
+   TABS
+   ============================================ */
+
+.tabs-container {
+  width: 100%;
+  margin-bottom: var(--space-xl);
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: var(--space-xs);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: var(--space-sm) var(--space-md);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  /* Aligns with border-bottom of tabs-nav */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: var(--text-secondary);
+}
+
+.tab-btn.active {
+  color: var(--text-primary);
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

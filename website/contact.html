@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Perseverance AI - Become a Design Partner</title>
+    <meta name="description"
+        content="Get started with Lensy. Submit your documentation for analysis or schedule a demo.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/" class="logo">
+                    <span class="logo-brace">{</span>
+                    <span class="logo-p">P</span>
+                    <span class="logo-brace">}</span>
+                    <span class="logo-company">Perseverance AI</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/index.html#features">Features</a></li>
+                    <li><a href="/index.html#how-it-works">How It Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="notices.html">Notices</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="https://console.perseveranceai.com/" target="_blank">Console ↗</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-page">
+        <div class="container">
+            <div class="contact-container">
+                <div class="section-title">
+                    <h1>Get Started with Lensy</h1>
+                    <p>Submit your documentation URL or repository for a complimentary quality analysis.</p>
+                </div>
+
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="doc_url">Your Documentation URL or Repo</label>
+                        <input type="text" id="doc_url" name="doc_url"
+                            placeholder="e.g., docs.yourcompany.com or github.com/org/repo" required>
+                        <span class="error-message">Please enter a valid URL.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message">Please enter your name.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message">Please enter a valid email address.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Organization / Company</label>
+                        <input type="text" id="organization" name="organization">
+                    </div>
+                    <div id="form-status"></div>
+                    <button type="submit" class="btn" style="width: 100%;">Get Analysis</button>
+                </form>
+
+                <p class="text-center mt-xl" style="color: var(--text-muted);">
+                    Or schedule a live demo: <a href="https://calendly.com/getperseverance" target="_blank"
+                        style="color: var(--text-primary); text-decoration: none; font-weight: 600;">Pick a time</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="/" class="logo">
+                    <span class="logo-brace">{</span>
+                    <span class="logo-p">P</span>
+                    <span class="logo-brace">}</span>
+                </a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/pasupdr/" class="social-link" target="_blank">LinkedIn</a>
+                    <a href="https://calendly.com/getperseverance" class="social-link" target="_blank">Schedule a
+                        conversation</a>
+                    <a href="https://x.com/getperseverance" class="social-link" target="_blank">X</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Perseverance AI. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/contact-form.js"></script>
+    <script src="assets/js/cookie-consent.js"></script>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links').classList.toggle('open');
+        });
+    </script>
+</body>
+
+</html>

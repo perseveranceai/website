@@ -9,6 +9,14 @@
         content="Public notices and filings from Perseverance AI LLC, including Labor Condition Application notices.">
     <meta name="theme-color" content="#0a0a0a">
     <link rel="canonical" href="https://www.perseveranceai.com/notices.html">
+    <meta property="og:title" content="Public Notices - Perseverance AI">
+    <meta property="og:description" content="Public notices and filings from Perseverance AI LLC.">
+    <meta property="og:url" content="https://www.perseveranceai.com/notices.html">
+    <meta property="og:image" content="https://www.perseveranceai.com/assets/images/og-image.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Public Notices - Perseverance AI">
+    <meta name="twitter:description" content="Public notices and filings from Perseverance AI LLC.">
+    <meta name="twitter:image" content="https://www.perseveranceai.com/assets/images/og-image.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -30,11 +38,11 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
                     <li><a href="index.html#how-it-works">How It Works</a></li>
-                    <li><a href="index.html#benefits">Benefits</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="notices.html" class="active">Notices</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="https://console.perseveranceai.com/" target="_blank">Console ↗</a></li>
                 </ul>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -97,18 +105,18 @@
     </footer>
     <script src="assets/js/cookie-consent.js"></script>
     <script>
-    document.querySelector('.hamburger').addEventListener('click', function () {
-        this.classList.toggle('active');
-        this.setAttribute('aria-expanded', this.classList.contains('active'));
-        document.querySelector('.nav-links').classList.toggle('open');
-    });
-    document.querySelectorAll('.nav-links a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            document.querySelector('.hamburger').classList.remove('active');
-            document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
-            document.querySelector('.nav-links').classList.remove('open');
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links').classList.toggle('open');
         });
-    });
+        document.querySelectorAll('.nav-links a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+                document.querySelector('.nav-links').classList.remove('open');
+            });
+        });
     </script>
 </body>
 

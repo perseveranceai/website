@@ -93,11 +93,11 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#benefits">Benefits</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="notices.html">Notices</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="https://console.perseveranceai.com/" target="_blank">Console ↗</a></li>
                 </ul>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -111,9 +111,10 @@
 
     <section class="hero" id="home">
         <div class="container">
-            <h1>Find What's Broken in Your Developer Docs</h1>
-            <p>Lensy finds deprecated code examples, outdated API references, and content gaps — with specific fixes you
-                can apply immediately.</p>
+            <h1>Turn GitHub Issues into Documentation Fixes</h1>
+            <p>Lensy analyzes your documentation gaps—either from your <strong>GitHub Issues</strong> or direct
+                <strong>URL analysis</strong>—and provides specific, actionable code fixes you can apply immediately.
+            </p>
             <p style="font-size: 0.9375rem; color: var(--text-primary); margin-top: var(--space-lg); font-weight: 500;">
                 <span
                     style="display: inline-block; background: var(--bg-tertiary); border: 1px solid var(--border-default); border-radius: 6px; padding: 0.5rem 1rem;">
@@ -121,144 +122,101 @@
                 </span>
             </p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn">See It In Action</a>
-                <a href="https://calendly.com/getperseverance" class="btn btn-secondary" target="_blank">Schedule a
-                    Demo</a>
+                <a href="#features" class="btn">Explore Features</a>
+                <a href="#contact" class="btn btn-secondary">Get Early Access</a>
             </div>
         </div>
     </section>
 
-    <section class="product-demo" id="demo">
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Workflow</h2>
+                <p>Two powerful ways to keep your documentation in sync with your codebase.</p>
+            </div>
+            <div class="features-grid">
+                <!-- Card 1: GitHub Issues Sync -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>GitHub Issues Sync <span class="stage-badge"
+                            style="font-size: 0.7rem; padding: 0.2rem 0.5rem; vertical-align: middle; margin-top: 0; margin-left: 0.5rem;">New</span>
+                    </h3>
+                    <p>Connect your repository. We automatically find issues that are actually documentation gaps and
+                        generate fixes.</p>
+                    <ul>
+                        <li>✓ Auto-detect docs-related issues</li>
+                        <li>✓ Generate code fixes instantly</li>
+                        <li>✓ <strong>Copy Fix</strong> (Open PR coming soon)</li>
+                    </ul>
+                    <a href="https://console.perseveranceai.com/" class="btn">Try Console</a>
+                </div>
+
+                <!-- Card 2: Doc Health Check -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Doc Health Check</h3>
+                    <p>Paste any documentation URL. Get an instant audit of your documentation quality against 5 key
+                        dimensions.</p>
+                    <ul>
+                        <li>✓ Instant URL Analysis</li>
+                        <li>✓ Detect deprecated code</li>
+                        <li>✓ Find content gaps</li>
+                    </ul>
+                    <a href="https://console.perseveranceai.com/" class="btn btn-secondary">Try Console</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-demo" id="how-it-works">
         <div class="container">
             <div class="section-title">
                 <h2>See Lensy In Action</h2>
                 <p>Watch how Lensy analyzes documentation and delivers actionable recommendations in real-time.</p>
             </div>
-            <div class="video-container">
-                <!-- USER PROVIDED: Demo video (60-90s) -->
-                <video controls poster="assets/images/video-poster.jpg">
-                    <source src="assets/video/Lensy-HD.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+
+            <div class="tabs-container">
+                <div class="tabs-nav" id="video-tabs">
+                    <button class="tab-btn active" data-tab="video-url">URL Analysis (Doc Mode)</button>
+                    <button class="tab-btn" data-tab="video-github">GitHub Issues Sync</button>
+                </div>
+
+                <div class="tab-content active" id="video-url">
+                    <div class="video-container">
+                        <!-- USER PROVIDED: Demo video (60-90s) -->
+                        <video controls poster="assets/images/video-poster.jpg">
+                            <source src="assets/video/Lensy-HD.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="video-github">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="assets/video/lensy-github-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
+
+
+    <section id="contact-cta">
+        <div class="container text-center">
             <div class="section-title">
-                <h2>How It Works</h2>
+                <h2>Ready to Improve Your Docs?</h2>
+                <p>Join our design partner program or view the features in action.</p>
             </div>
-            <div class="how-it-works-grid">
-                <div class="steps-column">
-                    <div class="step">
-                        <span class="step-number">1</span>
-                        <div>
-                            <h3>Input</h3>
-                            <p>Paste any documentation URL — API references, SDK guides, tutorials. No setup required.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">2</span>
-                        <div>
-                            <h3>Analyze</h3>
-                            <p>AI evaluates content against 5 quality dimensions: Relevance, Freshness, Clarity,
-                                Accuracy, and Completeness.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">3</span>
-                        <div>
-                            <h3>Discover</h3>
-                            <p>See a prioritized list of issues with specific line numbers — deprecated code, outdated
-                                APIs, content gaps.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">4</span>
-                        <div>
-                            <h3>Select</h3>
-                            <p>Choose which issues to fix. Focus on high-impact problems first.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">5</span>
-                        <div>
-                            <h3>Generate</h3>
-                            <p>AI creates before/after code fixes with clear explanations. No guesswork.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">6</span>
-                        <div>
-                            <h3>Apply</h3>
-                            <p>Export fixes as a report or apply directly. Share with your team and track improvements.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="diagram-column">
-                    <img src="assets/images/how-it-works-diagram.svg"
-                        alt="How Lensy Works - 6 step process from URL input to export">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="benefits">
-        <div class="container">
-            <div class="benefits">
-                <div class="benefits-content" style="max-width: 800px; margin: 0 auto;">
-                    <h2>Why Lensy</h2>
-                    <ul class="benefits-list">
-                        <li><strong>Specific fixes</strong> — Get "replace auth.login() with auth.authenticate() on line
-                            45" instead of vague advice</li>
-                        <li><strong>Fast audits</strong> — Point Lensy at a URL, get results in minutes</li>
-                        <li><strong>Prioritized recommendations</strong> — Know what to fix first</li>
-                        <li><strong>Built for scale</strong> — Cloud-native infrastructure with real-time streaming and
-                            multi-model AI analysis</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Become a Design Partner</h2>
-                <p>Submit your documentation URL for a complimentary quality analysis.</p>
-            </div>
-            <form id="contact-form" class="contact-form" novalidate>
-                <div class="form-group">
-                    <label for="doc_url">Your Documentation URL</label>
-                    <input type="url" id="doc_url" name="doc_url" placeholder="e.g., docs.yourcompany.com" required>
-                    <span class="error-message">Please enter a valid documentation URL.</span>
-                </div>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                    <span class="error-message">Please enter your name.</span>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                    <span class="error-message">Please enter a valid email address.</span>
-                </div>
-                <div class="form-group">
-                    <label for="organization">Organization / Company</label>
-                    <input type="text" id="organization" name="organization">
-                </div>
-                <div id="form-status"></div>
-                <button type="submit" class="btn">Become a Design Partner</button>
-            </form>
-            <p class="text-center mt-xl" style="color: var(--text-muted);">
+            <a href="contact.html" class="btn">Get Started</a>
+            <p class="mt-lg" style="color: var(--text-muted);">
                 Or schedule a live demo: <a href="https://calendly.com/getperseverance" target="_blank"
                     style="color: var(--text-primary); text-decoration: none; font-weight: 600;">Pick a time</a>
             </p>
         </div>
-        <script src="/assets/js/contact-form.js"></script>
     </section>
 
     <footer>
@@ -283,18 +241,47 @@
     </footer>
     <script src="assets/js/cookie-consent.js"></script>
     <script>
-    document.querySelector('.hamburger').addEventListener('click', function () {
-        this.classList.toggle('active');
-        this.setAttribute('aria-expanded', this.classList.contains('active'));
-        document.querySelector('.nav-links').classList.toggle('open');
-    });
-    document.querySelectorAll('.nav-links a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            document.querySelector('.hamburger').classList.remove('active');
-            document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
-            document.querySelector('.nav-links').classList.remove('open');
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+            document.querySelector('.nav-links').classList.toggle('open');
         });
-    });
+        document.querySelectorAll('.nav-links a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+                document.querySelector('.nav-links').classList.remove('open');
+            });
+        });
+
+        // Tab Switching Logic
+        function setupTabs(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const buttons = container.querySelectorAll('.tab-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents in this container's parent
+                    const parent = container.closest('.tabs-container');
+                    parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    parent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Show corresponding content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
+
+        // Initialize Tabs
+        document.addEventListener('DOMContentLoaded', () => {
+            setupTabs('video-tabs');
+        });
     </script>
 </body>
 

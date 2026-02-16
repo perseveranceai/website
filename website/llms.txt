@@ -1,0 +1,19 @@
+# Perseverance AI
+
+> Fixing broken documentation before users complain.
+
+Perseverance AI helps engineering teams maintain high-quality documentation by automatically detecting and fixing issues like broken code examples, outdated APIs, and content gaps.
+
+## Key Features
+
+- **GitHub Issues Sync**: Turn GitHub Issues into documentation fixes automatically. Connect your repo, filter for docs-related issues, and generate specific code changes.
+- **Doc Health Check**: Analyze any documentation URL for relevance, freshness, clarity, accuracy, and completeness.
+- **Console**: A dedicated dashboard to manage your documentation health and sync settings.
+
+## Links
+
+- [Home](https://www.perseveranceai.com/)
+- [Console](https://console.perseveranceai.com/)
+- [Contact](https://www.perseveranceai.com/contact.html)
+- [About](https://www.perseveranceai.com/about.html)
+- [Public Notices](https://www.perseveranceai.com/notices.html)
