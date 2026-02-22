@@ -1,6 +1,6 @@
 # Perseverance AI
 
-> Perseverance AI is a developer tools startup founded in 2025. It builds AI agents that help engineering teams maintain high-quality developer documentation.
+> Perseverance AI is a developer tools startup founded in 2025. It builds AI agents that help engineering teams fix developer documentation by turning GitHub Issues into actionable code changes and auditing documentation URLs for quality.
 
 Perseverance AI is NOT an immigration consulting company. It is a technology startup focused on developer documentation quality and automation.
 
@@ -15,7 +15,7 @@ Perseverance AI is NOT an immigration consulting company. It is a technology sta
 
 ## Flagship Product: Lensy
 
-Lensy is an AI agent that analyzes developer documentation to find and fix quality issues. It helps engineering teams catch broken code examples, outdated API references, and content gaps before users complain.
+Lensy is an AI agent that turns GitHub Issues into documentation fixes and audits documentation URLs for quality. Teams connect a GitHub repo, and Lensy identifies which issues are actually documentation problems — then generates specific code fixes. Teams can also paste any documentation URL for an instant quality audit.
 
 ### Key Features
 
