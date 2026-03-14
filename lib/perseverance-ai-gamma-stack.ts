@@ -104,20 +104,31 @@ export class PerseveranceAiGammaStack extends cdk.Stack {
             ],
         }));
 
-        // CloudFront invalidation scoped to gamma distribution
+        // CloudFront actions scoped to gamma distribution
         cofounderUser.addToPolicy(new iam.PolicyStatement({
-            sid: 'GammaCloudFrontAccess',
+            sid: 'GammaCloudFrontDistribution',
             effect: iam.Effect.ALLOW,
             actions: [
                 'cloudfront:CreateInvalidation',
                 'cloudfront:GetInvalidation',
                 'cloudfront:ListInvalidations',
                 'cloudfront:GetDistribution',
-                'cloudfront:ListDistributions',
+                'cloudfront:GetDistributionConfig',
             ],
             resources: [
                 `arn:aws:cloudfront::${this.account}:distribution/${distribution.distributionId}`,
             ],
+        }));
+
+        // CloudFront actions that require wildcard resource
+        cofounderUser.addToPolicy(new iam.PolicyStatement({
+            sid: 'CloudFrontListAndDescribe',
+            effect: iam.Effect.ALLOW,
+            actions: [
+                'cloudfront:ListDistributions',
+                'cloudfront:ListTagsForResource',
+            ],
+            resources: ['*'],
         }));
 
         // Allow listing buckets (some tooling needs this)
