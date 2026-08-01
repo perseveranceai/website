@@ -47,6 +47,48 @@ export class PerseveranceAiGammaStack extends cdk.Stack {
             region: 'us-east-1', // CloudFront requires us-east-1
         });
 
+        // ─── CloudFront Function: Basic Auth ────────────────────────
+        // Authorized users share one password, supplied at synth time via
+        // GAMMA_BASIC_AUTH_PASSWORD (see .env) — never hardcode it in source.
+        //   - rakeshp@perseveranceai.com
+        //   - damodharam@perseveranceai.com
+        const gammaAuthPassword = process.env.GAMMA_BASIC_AUTH_PASSWORD;
+        if (!gammaAuthPassword) {
+            throw new Error('GAMMA_BASIC_AUTH_PASSWORD env var is required to deploy PerseveranceAiGammaStack');
+        }
+        const gammaAuthUsers = ['rakeshp@perseveranceai.com', 'damodharam@perseveranceai.com'];
+        const validCredentials = gammaAuthUsers.map(
+            user => `"Basic ${Buffer.from(`${user}:${gammaAuthPassword}`).toString('base64')}"`
+        );
+        const basicAuthFunction = new cloudfront.Function(this, 'GammaBasicAuthFunction', {
+            functionName: 'gamma-basic-auth',
+            code: cloudfront.FunctionCode.fromInline(`
+function handler(event) {
+    var request = event.request;
+    var headers = request.headers;
+    var validCredentials = [
+        ${validCredentials.join(',\n        ')}
+    ];
+
+    if (
+        typeof headers.authorization === "undefined" ||
+        validCredentials.indexOf(headers.authorization.value) === -1
+    ) {
+        return {
+            statusCode: 401,
+            statusDescription: "Unauthorized",
+            headers: {
+                "www-authenticate": { value: "Basic realm=\\"Gamma Environment\\"" },
+            },
+        };
+    }
+
+    return request;
+}
+            `.trim()),
+            comment: 'Basic Auth for gamma environment access control',
+        });
+
         // ─── CloudFront Distribution ─────────────────────────────────
         const distribution = new cloudfront.Distribution(this, 'GammaDistribution', {
             defaultBehavior: {
@@ -55,6 +97,10 @@ export class PerseveranceAiGammaStack extends cdk.Stack {
                 }),
                 viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
                 cachePolicy: cloudfront.CachePolicy.CACHING_OPTIMIZED,
+                functionAssociations: [{
+                    function: basicAuthFunction,
+                    eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+                }],
             },
             defaultRootObject: 'index.html',
             domainNames: [gammaDomain],
